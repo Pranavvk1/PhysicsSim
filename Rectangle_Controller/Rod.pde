@@ -29,7 +29,8 @@ class Rod {
   public void applyTorque(float torque) {
     netTorque += torque;
   }
-  
+
+  // get the heading of the vector with respect to the positive x-axis. Clockwise angles are positive
   public float getAbsoluteAngle(float[] vector) {
     float angle = atan(vector[1] / vector[0]);
     if(vector[0] < 0 && vector[1] > 0) {
@@ -41,7 +42,6 @@ class Rod {
     }
     return angle;
   }
-  
   
   public float[] getDistanceFromHinge(Ball other) {
     float[] relPos = {other.pos[0], other.pos[1]};
